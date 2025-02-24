@@ -5,7 +5,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 from tqdm import tqdm
 
-class KompasScraper:
+class Scraper:
     def __init__(self, base_url, article_selector, title_selector, content_selector, max_pages=100):
         self.base_url = base_url
         self.article_selector = article_selector
@@ -104,7 +104,7 @@ def main():
     title_selector = "h1.read__title"
     content_selector = "div.read__content"
     
-    scraper = KompasScraper(base_url, article_selector, title_selector, content_selector, max_pages=1)
+    scraper = Scraper(base_url, article_selector, title_selector, content_selector, max_pages=1)
     
     # Scrape links
     print("Phase 1: Collecting article links...")
